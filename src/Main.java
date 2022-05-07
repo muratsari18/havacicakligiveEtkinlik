@@ -1,40 +1,30 @@
+/*Hava Sıcaklığına Göre Etkinlik Önerme.
+  Heat < 5 ise Kayak
+  Heat 5 ve 15 Arasında ise Sinema
+  Heat 10 ve 25 Arasında ise Piknik
+  Heat 25 ten büyük ise yüzme
+*/
 import java.util.Scanner;
+public class havasicakligi {
+    public static void main(String[]args){
+        int heat;
 
-public class Main {
-
-    public static void main(String[] args) {
-        int n1, n2, select;
-        Scanner input = new Scanner(System.in);
-        System.out.print("Ilk Sayıyı Giriniz:");
-        n1 = input.nextInt();
-        System.out.print("Ikinci Sayıyı Giriniz:");
-        n2 = input.nextInt();
-
-        System.out.println("1-Toplama\n2-Çıkarma\n3-Çarpma\n4-Bölme");
-        System.out.print("Seçiminiz nedir?");
-        select = input.nextInt();
-
-        switch (select) {
-            case 1:
-                System.out.println(n1 + n2);
-                break;
-            case 2:
-                System.out.println(n1 - n2);
-                break;
-            case 3:
-                System.out.println(n1 * n2);
-                break;
-            case 4:
-                if(n2!=0)
-                System.out.println(n1 / n2);
-                else
-                    System.out.println("Bir sayı 0'a bolunemez!");
-                break;
-            default:
-                System.out.println("Araligin disinda bir deger sectiniz");
-
-
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Sicakligi Giriniz :");
+        heat=inp.nextInt();
+        
+        if (heat<5)
+            System.out.println("Kayak yapabilirsiniz.");
+        else if ( heat<=25) {
+                if (heat<=15)        //Burada Else if yerine 'IF' kullanıldı
+                                     // çünkü o değerler varsa etkinliği yap yoksa bir şey yapma.
+                    System.out.println("Sinemaya Gidebilir");
+                if(heat>=10)
+                    System.out.println("Piknige gidebilirsiniz");
         }
+        else
+            System.out.println("Yüzmeye gidebilirsiniz");
+
 
     }
 }
